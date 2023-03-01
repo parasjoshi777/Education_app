@@ -1,5 +1,7 @@
+import 'package:educational_app/screens/course_screen.dart';
 import 'package:flutter/material.dart';
 
+// ignore: must_be_immutable
 class HomePage extends StatelessWidget {
 
   // Creating static data in lists
@@ -185,7 +187,14 @@ class HomePage extends StatelessWidget {
                 ),
                 itemBuilder: (context, index) {
                   return InkWell(
-                    onTap: (){},
+                    onTap: (){
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) =>
+                                CourseScreen(imgList[index]),
+                      ));
+                    },
                     child: Container(
                       padding:
                         EdgeInsets.symmetric(vertical: 20, horizontal:10),
@@ -198,7 +207,7 @@ class HomePage extends StatelessWidget {
                             Padding(
                                 padding: EdgeInsets.all(10),
                                 child: Image.asset(
-                                  "Images/${imgList[index]}.png",
+                                  "images/${imgList[index]}.png",
                                   width: 100,
                                   height: 100,
                                 ),
@@ -222,7 +231,7 @@ class HomePage extends StatelessWidget {
                               style: TextStyle(
                                 fontSize: 15,
                                 fontWeight: FontWeight.w500,
-                                color: Colors.black.withOpacity(0.6),
+                                color: Colors.black.withOpacity(0.5),
                               ),
                             ),
                           ],
@@ -234,6 +243,23 @@ class HomePage extends StatelessWidget {
             ],
             ),
           ),
+        ],
+      ),
+      bottomNavigationBar: BottomNavigationBar(
+        showUnselectedLabels: true,
+        iconSize: 32,
+        selectedItemColor: Color(0xFF674AEF),
+        selectedFontSize: 18,
+        unselectedItemColor: Colors.grey,
+        items: [
+          BottomNavigationBarItem(
+              icon: Icon(Icons.home), label: 'Home'),
+          BottomNavigationBarItem(
+              icon: Icon(Icons.assignment), label: 'Course'),
+          BottomNavigationBarItem(
+              icon: Icon(Icons.favorite), label: 'Wishlist'),
+          BottomNavigationBarItem(
+              icon: Icon(Icons.person), label: 'Account'),
         ],
       ),
     );
