@@ -1,8 +1,8 @@
+import 'package:educational_app/bottom_nav.dart';
 import 'package:educational_app/screens/home_screen.dart';
 import 'package:flutter/material.dart';
 
 class WelcomeScreen extends StatelessWidget {
-
   @override
   Widget build(BuildContext context) {
     return Material(
@@ -11,29 +11,31 @@ class WelcomeScreen extends StatelessWidget {
         height: MediaQuery.of(context).size.height,
         child: Stack(
           children: [
-            Stack(children: [
-              Container(
-                width: MediaQuery.of(context).size.width,
-                height: MediaQuery.of(context).size.height / 1.6,
-                decoration: BoxDecoration(
-                  color: Colors.white,
-                ),
-              ),
-              Container(
-                width: MediaQuery.of(context).size.width,
-                height: MediaQuery.of(context).size.height / 1.6,
-                decoration: BoxDecoration(
-                  color: Color(0xff674AEf),
-                  borderRadius: BorderRadius.only(bottomRight: Radius.circular(70)),
-                ),
-                child: Center(
-                  child: Image.asset(
-                    "images/books.png",
-                    scale: 0.8,
+            Stack(
+              children: [
+                Container(
+                  width: MediaQuery.of(context).size.width,
+                  height: MediaQuery.of(context).size.height / 1.6,
+                  decoration: BoxDecoration(
+                    color: Colors.white,
                   ),
                 ),
-              ),
-            ],
+                Container(
+                  width: MediaQuery.of(context).size.width,
+                  height: MediaQuery.of(context).size.height / 1.6,
+                  decoration: BoxDecoration(
+                    color: Color(0xff674AEf),
+                    borderRadius:
+                        BorderRadius.only(bottomRight: Radius.circular(70)),
+                  ),
+                  child: Center(
+                    child: Image.asset(
+                      "images/books.png",
+                      scale: 0.8,
+                    ),
+                  ),
+                ),
+              ],
             ),
             Align(
               alignment: Alignment.bottomCenter,
@@ -75,8 +77,8 @@ class WelcomeScreen extends StatelessWidget {
                         "Learning with Pleasure with Dear Programmer, Wherever you are.",
                         textAlign: TextAlign.center,
                         style: TextStyle(
-                            fontSize: 17,
-                            color: Colors.black.withOpacity(0.6),
+                          fontSize: 17,
+                          color: Colors.black.withOpacity(0.6),
                         ),
                       ),
                     ),
@@ -84,19 +86,17 @@ class WelcomeScreen extends StatelessWidget {
                     Material(
                       color: Color(0xFF674AEF),
                       borderRadius: BorderRadius.circular(10),
-                      child: InkWell(
-                        onTap: (){
-                          Navigator.push(
-                              context,
-                              MaterialPageRoute(
-                                builder: (context) => HomePage(),
-                              ));
+                      child: GestureDetector(
+                        onTap: () {
+                          Navigator.of(context).push(MaterialPageRoute(
+                            builder: (context) {
+                              return BottomNavigation();
+                            },
+                          ));
                         },
                         child: Container(
                           padding: EdgeInsets.symmetric(
-                              vertical: 15,
-                              horizontal: 80
-                          ),
+                              vertical: 15, horizontal: 80),
                           child: Text(
                             "Get Start",
                             style: TextStyle(

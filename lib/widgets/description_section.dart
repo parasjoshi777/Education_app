@@ -1,20 +1,21 @@
 import 'package:flutter/material.dart';
 
 class DescriptionSection extends StatelessWidget {
-
   @override
   Widget build(BuildContext context) {
-    return Padding(padding: EdgeInsets.only(top: 20),
+    return Padding(
+      padding: EdgeInsets.only(top: 20),
       child: Column(
         children: [
-          Text("Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
+          Text(
+            "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
             style: TextStyle(
               fontSize: 16,
               color: Colors.black.withOpacity(0.7),
             ),
             textAlign: TextAlign.justify,
           ),
-          SizedBox(width: 5),
+          SizedBox(height: 15),
           Row(
             children: [
               Text(
@@ -38,7 +39,7 @@ class DescriptionSection extends StatelessWidget {
               ),
             ],
           ),
-          SizedBox(height: 10),
+          SizedBox(height: 15),
           Row(
             children: [
               Text(

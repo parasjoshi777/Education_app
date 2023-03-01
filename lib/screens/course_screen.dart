@@ -4,17 +4,14 @@ import 'package:flutter/material.dart';
 
 // ignore: must_be_immutable
 class CourseScreen extends StatefulWidget {
-  String img;
-  CourseScreen(this.img);
   @override
   State<CourseScreen> createState() => _CourseScreenState();
 }
 
-class _CourseScreenState extends State<CourseScreen>{
-
+class _CourseScreenState extends State<CourseScreen> {
   bool isVideosSection = true;
   @override
-  Widget build(BuildContext context){
+  Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
         foregroundColor: Colors.black,
@@ -22,7 +19,7 @@ class _CourseScreenState extends State<CourseScreen>{
         elevation: 0,
         centerTitle: true,
         title: Text(
-          widget.img,
+          "Flutter",
           style: TextStyle(
             fontWeight: FontWeight.bold,
             letterSpacing: 1,
@@ -39,7 +36,8 @@ class _CourseScreenState extends State<CourseScreen>{
           ),
         ],
       ),
-      body: Padding(padding: EdgeInsets.symmetric(vertical: 10, horizontal: 20),
+      body: Padding(
+        padding: EdgeInsets.symmetric(vertical: 10, horizontal: 20),
         child: ListView(
           children: [
             Container(
@@ -50,7 +48,7 @@ class _CourseScreenState extends State<CourseScreen>{
                 borderRadius: BorderRadius.circular(20),
                 color: Color(0xFFF5F3FF),
                 image: DecorationImage(
-                  image: AssetImage("images/${widget.img}.png"),
+                  image: AssetImage("images/Flutter.png"),
                 ),
               ),
               child: Center(
@@ -70,7 +68,7 @@ class _CourseScreenState extends State<CourseScreen>{
             ),
             SizedBox(height: 15),
             Text(
-              "${widget.img} Complete Course",
+              "Flutter Complete Course",
               style: TextStyle(
                 fontSize: 22,
                 fontWeight: FontWeight.w600,
@@ -78,7 +76,7 @@ class _CourseScreenState extends State<CourseScreen>{
             ),
             SizedBox(height: 5),
             Text(
-              "Created by Dear Programmer",
+              "Created by Paras Joshi",
               style: TextStyle(
                 fontSize: 16,
                 fontWeight: FontWeight.w500,
@@ -118,7 +116,8 @@ class _CourseScreenState extends State<CourseScreen>{
                         });
                       },
                       child: Container(
-                        padding: EdgeInsets.symmetric(vertical: 15, horizontal: 35),
+                        padding:
+                            EdgeInsets.symmetric(vertical: 15, horizontal: 35),
                         child: Text(
                           "Videos",
                           style: TextStyle(
@@ -142,7 +141,8 @@ class _CourseScreenState extends State<CourseScreen>{
                         });
                       },
                       child: Container(
-                        padding: EdgeInsets.symmetric(vertical: 15, horizontal: 35),
+                        padding:
+                            EdgeInsets.symmetric(vertical: 15, horizontal: 15),
                         child: Text(
                           "Description",
                           style: TextStyle(
